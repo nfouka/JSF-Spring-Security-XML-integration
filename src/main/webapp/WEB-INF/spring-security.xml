@@ -1,28 +1,25 @@
 <beans:beans xmlns="http://www.springframework.org/schema/security"
-             xmlns:beans="http://www.springframework.org/schema/beans"
-             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xmlns:beans="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
              xsi:schemaLocation="http://www.springframework.org/schema/beans
-	http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
-	http://www.springframework.org/schema/security
-	http://www.springframework.org/schema/security/spring-security-4.0.xsd">
+          http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+          http://www.springframework.org/schema/security
+          http://www.springframework.org/schema/security/spring-security-3.2.xsd">
 
     <http auto-config="true">
-        <intercept-url pattern="/admin**" access="hasRole('ROLE_ADMIN')"/>
-        <intercept-url pattern="/" access="permitAll"/>
-        <csrf disabled="true"/>
-        <form-login
-                login-page="/pages/login.xhtml"
-                default-target-url="/pages/login.xhtml"
-                authentication-failure-url="/pages/loginfailed.xhtml"/>
+        <intercept-url pattern="/pages/admin.xhtml" access="ROLE_ADMIN" />
+        <form-login login-processing-url="/j_spring_security_check"
+                    login-page="/pages/login.xhtml"
+                    username-parameter="username"
+                    password-parameter="password"
+                    default-target-url="/pages/admin.xhtml"
+                    authentication-failure-url="/pages/loginfailed.xhtml" />
+        <logout logout-url="/j_spring_security_logout" logout-success-url="/pages/login.xhtml" />
     </http>
 
     <authentication-manager>
         <authentication-provider>
             <user-service>
-                <user name="Vladik" password="7788" authorities="ROLE_USER"/>
-                <user name="Dimka" password="8814" authorities="ROLE_ADMIN"/>
-                <user name="Nikitka" password="1488" authorities="ROLE_ADMIN"/>
-                <user name="test" password="1" authorities="ROLE_ADMIN"/>
+                <user name="test" password="password" authorities="ROLE_ADMIN" />
             </user-service>
         </authentication-provider>
     </authentication-manager>

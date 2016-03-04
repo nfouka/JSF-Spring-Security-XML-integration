@@ -21,7 +21,7 @@ public class AuthentificationBean implements Serializable {
     public String doLogin() throws IOException,ServletException{
 
         ExternalContext context = FacesContext.getCurrentInstance().getExternalContext();
-        RequestDispatcher dispatcher = ((ServletRequest) context.getRequest()).getRequestDispatcher("/login");
+        RequestDispatcher dispatcher = ((ServletRequest) context.getRequest()).getRequestDispatcher("/j_spring_security_check");
         dispatcher.forward((ServletRequest) context.getRequest(), (ServletResponse) context.getResponse());
         FacesContext.getCurrentInstance().responseComplete();
         return null;
@@ -30,7 +30,7 @@ public class AuthentificationBean implements Serializable {
     public String doLogout(){
 
         FacesContext.getCurrentInstance().getExternalContext().invalidateSession();
-        return "/logout.xhtml";
+        return "/pages/logout.xhtml";
     }
 
     public void redirect(String url) throws IOException {

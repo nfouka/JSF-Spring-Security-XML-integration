@@ -1,5 +1,5 @@
 .form{
-    background-image: url(/images/retina_wood_@2X.png);
+    background-image: url("#{resource['images/retina_wood.png']}");
 }
 .wrapper {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);

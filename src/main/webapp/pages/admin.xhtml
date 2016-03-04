@@ -5,6 +5,7 @@
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:c="http://java.sun.com/jsp/jstl/core"
       xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
       xmlns:sec="http://www.springframework.org/tags">
 
@@ -21,11 +22,12 @@
 
         <h:panelGroup layout="block" id="admin-form" styleClass="wrapper">
             <h:panelGroup layout="block" id="header" styleClass="header">
-                <h:outputText value="SPM-Portal" id="spm-portal-label" styleClass="spm-portal-label"/>
+                <h:outputText value="Spring Security" id="spm-portal-label" styleClass="spm-portal-label"/>
             </h:panelGroup>
             <h:panelGroup layout="block" id="output" styleClass="content">
-                <h:outputText value="KEK TI ADMIN, ETO MOI GUTKII TRANSLIT AZAZAZ" id="spm-portal-admin-message" styleClass="spm-portal-admin-message spm-portal-label"/>
-                <h:commandLink value="logout" styleClass="btn-link" action="#{authentificationBean.doLogout()}"/>
+                <h:outputText value="TI ADMIN, BRO" id="spm-portal-admin-message" styleClass="spm-portal-admin-message spm-portal-label"/>
+              <!--  <h:commandLink value="logout" styleClass="btn-link" action="j_spring_security_logout"/>-->
+                <a href="/j_spring_security_logout" class="btn-link"> Logout </a>
             </h:panelGroup>
             <h:panelGroup layout="block" id="footer" styleClass="footer">
 
