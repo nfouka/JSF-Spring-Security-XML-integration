@@ -6,7 +6,8 @@
           http://www.springframework.org/schema/security/spring-security-3.2.xsd">
 
     <http auto-config="true">
-        <intercept-url pattern="/pages/admin.xhtml" access="ROLE_ADMIN" />
+        <intercept-url pattern="/admin**" access="ROLE_ADMIN" />
+        <intercept-url pattern="/**" access="ROLE_USER"/>
         <form-login login-processing-url="/j_spring_security_check"
                     login-page="/pages/login.xhtml"
                     username-parameter="username"
@@ -19,7 +20,8 @@
     <authentication-manager>
         <authentication-provider>
             <user-service>
-                <user name="test" password="password" authorities="ROLE_ADMIN" />
+                <user name="test1" password="1" authorities="ROLE_USER" />
+                <user name="test" password="2" authorities="ROLE_ADMIN" />
             </user-service>
         </authentication-provider>
     </authentication-manager>
