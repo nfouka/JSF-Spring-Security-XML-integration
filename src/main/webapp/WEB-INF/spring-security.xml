@@ -6,15 +6,15 @@
           http://www.springframework.org/schema/security/spring-security-3.2.xsd">
 
     <http auto-config="true">
-        <intercept-url pattern="/admin**" access="ROLE_ADMIN" />
-        <intercept-url pattern="/**" access="ROLE_USER"/>
-        <form-login login-processing-url="/j_spring_security_check"
+        <intercept-url pattern="/pages/admin**" access="ROLE_ADMIN"/>
+        <intercept-url pattern="/pages/login.xhtml" access="permitAll"/>
+        <form-login login-processing-url="/pages/j_spring_security_check"
                     login-page="/pages/login.xhtml"
                     username-parameter="username"
                     password-parameter="password"
                     default-target-url="/pages/admin.xhtml"
                     authentication-failure-url="/pages/loginfailed.xhtml" />
-        <logout logout-url="/j_spring_security_logout" logout-success-url="/pages/login.xhtml" />
+        <logout logout-url="/pages/j_spring_security_logout" logout-success-url="/pages/login.xhtml" />
     </http>
 
     <authentication-manager>
