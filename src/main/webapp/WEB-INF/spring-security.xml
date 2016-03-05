@@ -6,22 +6,21 @@
           http://www.springframework.org/schema/security/spring-security-3.2.xsd">
 
     <http auto-config="true" use-expressions="true">
-        <intercept-url pattern="/pages/admin**" access="hasRole('ROLE_ADMIN')"/>
-        <intercept-url pattern="/pages/login.xhtml" access="permitAll"/>
-        <form-login login-processing-url="/pages/j_spring_security_check"
+        <intercept-url pattern="/pages/admin.xhtml" access="hasRole('ROLE_ADMIN')"/>
+        <intercept-url pattern="/pages/login.xhtml" access="hasRole('permitAll')"/>
+        <form-login login-processing-url="/j_spring_security_check"
                     login-page="/pages/login.xhtml"
-                    username-parameter="username"
-                    password-parameter="password"
                     default-target-url="/pages/admin.xhtml"
                     authentication-failure-url="/pages/loginfailed.xhtml" />
-        <logout logout-url="/pages/j_spring_security_logout" logout-success-url="/pages/login.xhtml" />
+        <logout logout-url="/j_spring_security_logout" logout-success-url="/pages/login.xhtml" />
+        <csrf/>
     </http>
 
     <authentication-manager>
         <authentication-provider>
             <user-service>
-                <user name="test1" password="1" authorities="hasRole('ROLE_USER')" />
-                <user name="test" password="2" authorities="hasRole('ROLE_ADMIN')" />
+                <user name="test1" password="1" authorities="ROLE_USER" />
+                <user name="test" password="2" authorities="ROLE_ADMIN" />
             </user-service>
         </authentication-provider>
     </authentication-manager>

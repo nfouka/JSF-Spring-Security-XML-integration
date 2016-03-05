@@ -24,14 +24,12 @@
             <h:outputText value="Spring Security" id="spm-portal-label" styleClass="spm-portal-label"/>
         </h:panelGroup>
         <h:panelGrid columns="1" style="text-align: center" styleClass="login-input-grid table" id="login-input-grid">
-            <h:inputText a:placeholder="Username" id="username" styleClass="form-control input-field" required="true"/>
-            <h:message for="username" styleClass="alert-warning"/>
-            <h:inputSecret a:placeholder="Password" id="password" styleClass="form-control input-field" required="true"/>
-            <h:message for="password" styleClass="alert-warning"/>
+            <h:inputText a:placeholder="Username" id="j_username" styleClass="form-control input-field" required="true"/>
+            <h:inputSecret a:placeholder="Password" id="j_password" styleClass="form-control input-field" required="true"/>
         </h:panelGrid>
         <h:panelGrid columns="2" styleClass="table  button-grid" style="text-align: center" id="button-input-grid">
             <!--<h:commandButton value="Log in" id="login" action="j_spring_security_check" styleClass="btn btn-lg btn-success" />-->
-            <a href="/pages/j_spring_security_check" class="btn btn-lg btn-success">Log in</a>
+            <a href="/j_spring_security_check" class="btn btn-lg btn-success">Log in</a>
             <h:commandButton value="Register" styleClass="btn btn-lg btn-info"/>
         </h:panelGrid>
 
