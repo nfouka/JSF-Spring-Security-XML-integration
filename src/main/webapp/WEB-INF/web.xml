@@ -5,10 +5,11 @@
          version="3.1">
 
 
-    <!-- Change to "Production" when you are ready to deploy -->
+    <!-- Change to "Production" when you are ready to deploy
+        This params helps to avoid some UI warnings.-->
     <context-param>
         <param-name>javax.faces.PROJECT_STAGE</param-name>
-        <param-value>Development</param-value>
+        <param-value>Production</param-value>
     </context-param>
 
 

@@ -19,29 +19,31 @@
 <h:body styleClass="form"><!--
     <h:form prependId="false">
 -->
-    <h:form action="/j_spring_security_check" method="post">
-        <h:panelGroup layout="block"  styleClass="wrapper ">
-        <h:panelGroup layout="block" id="header" styleClass="header">
-            <h:outputText value="Spring Security" id="spm-portal-label" styleClass="spm-portal-label"/>
-        </h:panelGroup>
-        <h:panelGrid columns="1" style="text-align: center" styleClass="login-input-grid table" id="login-input-grid">
-            <h:inputText a:placeholder="Username" id="j_username" styleClass="form-control input-field" required="true"/>
-            <h:inputSecret a:placeholder="Password" id="j_password" styleClass="form-control input-field" required="true"/>
-        </h:panelGrid>
-        <h:panelGrid columns="2" styleClass="table  button-grid" style="text-align: center" id="button-input-grid">
-            <h:commandButton value="Log in" id="login" type="submit" styleClass="btn btn-lg btn-success" />
-            <!--<a href="/j_spring_security_check" class="btn btn-lg btn-success">Log in</a>-->
-            <h:commandButton value="Register" styleClass="btn btn-lg btn-info"/>
-        </h:panelGrid>
+    <form action="/j_spring_security_check" method="post">
+        <h:panelGroup layout="block" styleClass="wrapper ">
+            <h:panelGroup layout="block" id="header" styleClass="header">
+                <h:outputText value="Spring Security" id="spm-portal-label" styleClass="spm-portal-label"/>
+            </h:panelGroup>
+            <h:panelGrid columns="1" style="text-align: center" styleClass="login-input-grid table"
+                         id="login-input-grid">
+                <h:inputText a:placeholder="Username" id="j_username" styleClass="form-control input-field"
+                             required="true"/>
+                <h:inputSecret a:placeholder="Password" id="j_password" styleClass="form-control input-field"
+                               required="true"/>
+            </h:panelGrid>
+            <h:panelGrid columns="2" styleClass="table  button-grid" style="text-align: center" id="button-input-grid">
+                <!-- <h:commandButton value="Log in" id="login" type="submit" styleClass="btn btn-lg btn-success" />-->
+                <!--<a href="/j_spring_security_check" class="btn btn-lg btn-success">Log in</a>-->
+                <!--<h:commandButton value="Register" styleClass="btn btn-lg btn-info"/>-->
+                <input type="submit" value="Login" class="btn btn-lg btn-success"/>
+            </h:panelGrid>
 
-        <h:panelGroup layout="block" id="footer" styleClass="footer">
+            <h:panelGroup layout="block" id="footer" styleClass="footer"/>
 
         </h:panelGroup>
-        </h:panelGroup>
 
-    </h:form>
+    </form>
 </h:body>
-
 
 
 <f:view>
